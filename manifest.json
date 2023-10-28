@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Block Youtube Block AdBlock",
+    "description": "A simple chrome extension that removes youtube adblocker blocker",
+    "version": "0.0.1",
+    "icons": {
+
+    },
+    "permissions": [],
+    "host_permissions": [
+        "https://www.youtube.com/*"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "content_scripts": [{
+        "run_at" : "document_idle",
+        "js": ["foreground.js"],
+        "matches": ["https://www.youtube.com/*"]
+    }]
+}
